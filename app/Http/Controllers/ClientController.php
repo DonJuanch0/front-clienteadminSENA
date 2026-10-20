@@ -23,5 +23,17 @@ abstract class ClientController extends Controller
         }
 
         return $response->json() ?? [];
+
+
+    }
+
+    protected function post(string $path, array $data)
+    {
+        return Http::post(config('app.url_api') . $path, $data)->successful();
+    }
+
+    protected function delete(string $path)
+    {
+        return Http::delete(config('app.url_api') . $path)->successful();
     }
 }

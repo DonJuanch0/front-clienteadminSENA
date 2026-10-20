@@ -15,6 +15,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/areas', [AreaController::class, 'index'])->name('areas.index');
 Route::get('/areas/{id}', [AreaController::class, 'show'])->name('areas.show');
+Route::post('/areas',   [AreaController::class, 'store']);
+Route::delete('/areas/{id}',  [AreaController::class, 'destroy']);
 
 Route::get('/training-centers', [TrainingCenterController::class, 'index'])->name('trainingCenters.index');
 Route::get('/training-centers/{id}', [TrainingCenterController::class, 'show'])->name('trainingCenters.show');
