@@ -13,6 +13,10 @@
         <p><strong>Marca:</strong> {{ $computer['brand'] }}</p>
         <p><strong>Modelo:</strong> {{ $computer['model'] }}</p>
 
+        @if (!empty($computer['image_url']))
+            <img src="{{ $computer['image_url'] }}" alt="Imagen del computador" width="200">
+        @endif
+
         <h2>Aprendices</h2>
         @if (count($computer['apprentices'] ?? []) === 0)
             <p class="empty">No tiene aprendices.</p>

@@ -5,6 +5,12 @@
 @section('content')
     <h1>Computadores</h1>
 
+    <form method="POST" action="{{ url('/computers') }}" enctype="multipart/form-data">
+        @csrf
+        <input type="file" name="image" accept="image/*">
+        <button>Crear</button>
+    </form>
+
     @if (count($computers) === 0)
         <p class="empty">No hay computadores registrados.</p>
     @else

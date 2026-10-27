@@ -29,6 +29,7 @@ Route::get('/courses/{id}', [CourseController::class, 'show'])->name('courses.sh
 
 Route::get('/computers', [ComputerController::class, 'index'])->name('computers.index');
 Route::get('/computers/{id}', [ComputerController::class, 'show'])->name('computers.show');
+Route::post('/computers', [ComputerController::class, 'store']);
 
 Route::get('/apprentices', [ApprenticeController::class, 'index'])->name('apprentices.index');
 Route::get('/apprentices/{id}', [ApprenticeController::class, 'show'])->name('apprentices.show');
